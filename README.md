@@ -1,61 +1,76 @@
-# Miela Stock — Frontend
+# Miela Stock
 
-## Descripción
+### Proyecto Final — Desarrollo Full Stack | ADA
 
-Miela Stock es una aplicación web de gestión de inventarios desarrollada con React, que permite administrar productos, clientes y proveedores mediante una interfaz moderna, intuitiva y adaptable a distintos dispositivos.
+Miela Stock es una aplicación web de gestión de inventario desarrollada con React, Node.js, Express y MongoDB.
 
-El proyecto constituye la interfaz de usuario de una aplicación Full Stack, conectada a una API RESTful desarrollada con Node.js, Express y MongoDB.
+Permite administrar productos, clientes y proveedores mediante una interfaz intuitiva y adaptable a diferentes dispositivos.
 
-## Tecnologías utilizadas
+## Tecnologías
 
+**Frontend**
 - React
-- JavaScript (JSX)
+- JavaScript
 - Vite
 - Tailwind CSS
-- PNPM
-- API REST
-- Autenticación JWT
+
+**Backend**
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+
+**Herramientas y despliegue**
+- Git y GitHub
+- Postman
+- MongoDB Compass
+- MongoDB Atlas
+- Render
+- Vercel
 
 ## Funcionalidades
 
-### Autenticación
 - Registro e inicio de sesión.
 - Autenticación mediante JWT.
-- Control de acceso según roles.
+- Control de acceso por roles.
+- Gestión de productos, clientes y proveedores.
+- Operaciones CRUD.
+- Validaciones y manejo de errores.
+- Interfaz responsive.
+- Integración con API REST.
 
-### Gestión de productos
-- Visualización del inventario.
-- Búsqueda y filtrado por categorías.
-- Consulta de precios y unidades disponibles.
-- Creación, edición y eliminación de productos para administradores.
+## Enlaces del proyecto
 
-### Gestión de clientes y proveedores
-- Administración de registros mediante operaciones CRUD.
-- Acceso restringido a administradores.
+**Aplicación web:**  
+https://miela-stock-frontend.vercel.app
 
-### Interfaz
-- Diseño responsive.
-- Componentes reutilizables.
-- Interfaz desarrollada con React y Tailwind CSS.
-- Comunicación con el backend mediante solicitudes HTTP.
+**Backend — Render:**  
+https://miela-stock-backend.onrender.com
 
-## Roles de usuario
+**Repositorio frontend:**  
+https://github.com/carinaantinir/miela_stock_frontend
 
-**Administrador:** acceso a la gestión de productos, clientes y proveedores.
+**Repositorio backend:**  
+https://github.com/carinaantinir/miela_stock_backend
 
-**Usuario:** acceso de consulta al inventario, sin permisos para modificar registros ni consultar información privada de clientes y proveedores.
+## Arquitectura
 
-## Instalación
+La aplicación utiliza una arquitectura cliente-servidor.
+
+El frontend desarrollado con React consume una API REST implementada con Node.js y Express. El backend utiliza Mongoose para comunicarse con MongoDB Atlas.
+
+**Flujo de comunicación:**
+
+React (Vercel) → Express (Render) → MongoDB Atlas
+
+## Instalación local
 
 Clonar el repositorio:
 
 ```bash
-git clone <URL_DEL_REPOSITORIO_FRONTEND>
-```
-
-Ingresar al directorio:
-
-```bash
+git clone https://github.com/carinaantinir/miela_stock_frontend.git
 cd miela_stock_frontend
 ```
 
@@ -65,48 +80,38 @@ Instalar dependencias:
 pnpm install
 ```
 
-Iniciar el entorno de desarrollo:
+Configurar la variable de entorno `VITE_API_URL` con la dirección del backend.
+
+Iniciar el proyecto:
 
 ```bash
 pnpm dev
 ```
 
-## Compilación de producción
-
-```bash
-pnpm build
-```
-
-Para visualizar la compilación:
-
-```bash
-pnpm preview
-```
-
-## Calidad del código
-
-El proyecto utiliza ESLint para el análisis estático del código.
-
-```bash
-pnpm lint
-```
-
 ## Integración con el backend
 
-El frontend consume la API RESTful de Miela Stock para realizar operaciones de autenticación y gestión de registros.
+Las solicitudes HTTP se realizan mediante Fetch API y están centralizadas en `src/lib/api.js`.
 
-Para utilizarlo localmente, es necesario disponer de la API y de su base de datos en funcionamiento.
+La API REST gestiona la autenticación de usuarios y las operaciones sobre productos, clientes y proveedores.
+
+El repositorio del backend incluye las instrucciones de instalación y la colección de pruebas de Postman.
+
+## API REST
+
+| Recurso | Endpoint |
+|---------|----------|
+| Registro | `/users/register` |
+| Inicio de sesión | `/users/login` |
+| Productos | `/api/products` |
+| Clientes | `/api/clients` |
+| Proveedores | `/api/suppliers` |
 
 ## Despliegue
 
-Frontend: Vercel.
+La aplicación se encuentra publicada en Vercel, con el backend alojado en Render y la base de datos en MongoDB Atlas.
 
-Backend: Render.
+## Autora
 
-Base de datos: MongoDB Atlas.
-
-Las URL de producción se incorporarán una vez verificado el despliegue.
-
-## Proyecto académico
-
-Proyecto integrador desarrollado durante la formación Backend de ADA IT, aplicando componentes React, consumo de APIs, autenticación, control de acceso y arquitectura cliente-servidor.
+**Carina Antiñir**  
+ 
+    ADA — 2026
